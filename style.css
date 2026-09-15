@@ -495,13 +495,17 @@ body {
         width: 100%;
     }
 
-    /* On tablet, show the visual section scaled down nicely */
+    /* On tablet, show the visual section scaled down nicely.
+       overflow: hidden clips the absolutely-positioned floating cards
+       so they don't bleed out of the scaled container and cause
+       horizontal scroll. */
     .visual {
         width: 100%;
         min-height: 480px;
         margin-top: 40px;
         transform: scale(0.82);
         transform-origin: top center;
+        overflow: hidden;
     }
 }
 
