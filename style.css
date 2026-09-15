@@ -444,7 +444,9 @@ body {
 }
 
 
-/* RESPONSIVE */
+/* =====================================================
+   RESPONSIVE — HERO (tablets & phones)
+   ===================================================== */
 
 @media (max-width: 1000px) {
 
@@ -471,6 +473,7 @@ body {
 }
 
 
+/* Tablet — stack hero vertically, hide desktop nav links */
 @media (max-width: 768px) {
 
     .nav {
@@ -484,54 +487,120 @@ body {
     .hero {
         flex-direction: column;
         align-items: flex-start;
-        padding: 60px 6%;
+        padding: 50px 6% 60px;
+        min-height: unset;
     }
 
     .intro {
         width: 100%;
     }
 
+    /* On tablet, show the visual section scaled down nicely */
     .visual {
         width: 100%;
-        min-height: 550px;
-        margin-top: 30px;
-
-        transform: scale(0.85);
+        min-height: 480px;
+        margin-top: 40px;
+        transform: scale(0.82);
         transform-origin: top center;
     }
 }
 
 
-@media (max-width: 500px) {
+/* Phone — completely restructure the hero visual */
+@media (max-width: 540px) {
+
+    .nav {
+        padding: 18px 5%;
+    }
 
     .connect {
         font-size: 13px;
-        padding: 9px 13px;
+        padding: 9px 14px;
+        gap: 8px;
+    }
+
+    /* Connect arrow hidden on tiny screens */
+    .connect span {
+        display: none;
+    }
+
+    .hero {
+        padding: 40px 5% 50px;
+        gap: 0;
+    }
+
+    .hi {
+        font-size: 17px;
     }
 
     .intro h1 {
-        font-size: 58px;
+        font-size: clamp(50px, 14vw, 70px);
+        letter-spacing: -2px;
     }
 
     .intro h2 {
-        font-size: 23px;
+        font-size: clamp(18px, 5vw, 24px);
+        margin-top: 14px;
     }
 
     .skills {
-        font-size: 14px;
+        font-size: 13.5px;
+        margin-top: 12px;
+        line-height: 1.5;
     }
 
     .about-me {
         font-size: 15px;
+        margin-top: 20px;
     }
 
     .links {
-        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        margin-top: 24px;
     }
 
+    .links a {
+        width: 100%;
+        justify-content: center;
+        padding: 13px 20px;
+    }
+
+    .socials {
+        margin-top: 28px;
+        gap: 13px;
+    }
+
+    .socials a {
+        width: 42px;
+        height: 42px;
+    }
+
+    /* On phones, hide the complex floating visual */
+    /* and show a simple centered photo instead    */
     .visual {
-        transform: scale(0.65);
-        transform-origin: top left;
+        display: none;
+    }
+
+    /* Simple photo shown only on mobile, right after intro */
+    .mobile-photo {
+        display: block;
+        width: 140px;
+        height: 180px;
+        object-fit: cover;
+        object-position: 52% 18%;
+        border-radius: 100px 100px 18px 18px;
+        border: 2px solid rgba(168, 85, 247, 0.4);
+        filter: brightness(0.9);
+        margin: 32px auto 0;
+    }
+}
+
+/* For screens wider than 540px hide the mobile photo */
+@media (min-width: 541px) {
+    .mobile-photo {
+        display: none;
     }
 }
 
@@ -1132,43 +1201,70 @@ body {
 
 
 /* =====================================================
-   RESPONSIVE — ABOUT / SKILLS / PROJECTS / CONTACT
+   RESPONSIVE — TABLETS (≤ 900px)
    ===================================================== */
 
 @media (max-width: 900px) {
+
     .about-grid {
         grid-template-columns: 1fr;
         gap: 48px;
     }
 
+    .about-body {
+        max-width: 100%;
+    }
+
     .skills-grid {
         grid-template-columns: 1fr;
+        max-width: 100%;
     }
 
     .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .contact-links {
         grid-template-columns: 1fr;
     }
-}
 
-@media (max-width: 600px) {
     .section-about,
     .section-skills,
     .section-projects,
     .section-contact {
         padding-left: 6%;
         padding-right: 6%;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVE — PHONES (≤ 600px)
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .section-about,
+    .section-skills,
+    .section-projects,
+    .section-contact {
+        padding-left: 5%;
+        padding-right: 5%;
         padding-top: 80px;
         padding-bottom: 80px;
     }
 
+    .section-heading {
+        font-size: clamp(28px, 8vw, 40px);
+        letter-spacing: -1px;
+    }
+
+    /* About */
     .about-stats {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+        padding: 24px 20px;
     }
 
     .stat-divider {
@@ -1176,10 +1272,40 @@ body {
         height: 1px;
     }
 
+    .about-body {
+        font-size: 15.5px;
+    }
+
+    /* Skills */
+    .skill-group {
+        padding: 22px 18px;
+    }
+
+    /* Projects */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-card {
+        padding: 22px 20px;
+    }
+
+    /* Contact */
     .contact-links {
         grid-template-columns: 1fr;
     }
 
+    .contact-sub {
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+
+    .contact-card {
+        padding: 16px 18px;
+        gap: 14px;
+    }
+
+    /* Footer */
     .footer-inner {
         flex-direction: column;
         align-items: flex-start;
