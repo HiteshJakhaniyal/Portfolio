@@ -29,7 +29,7 @@ body {
 }
 
 
-/* NAVBAR */
+/* ── NAVBAR ── */
 
 .nav {
     width: 100%;
@@ -93,7 +93,7 @@ body {
 }
 
 
-/* HERO */
+/* ── HERO ── */
 
 .hero {
     min-height: calc(100vh - 90px);
@@ -106,9 +106,6 @@ body {
 
     position: relative;
 }
-
-
-/* LEFT SIDE */
 
 .intro {
     width: 52%;
@@ -150,9 +147,6 @@ body {
     margin-top: 27px;
 }
 
-
-/* BUTTONS */
-
 .links {
     display: flex;
     align-items: center;
@@ -171,8 +165,7 @@ body {
     text-decoration: none;
     font-size: 15px;
 
-    transition: transform 0.3s ease,
-                background 0.3s ease;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
 .links a:hover {
@@ -188,9 +181,6 @@ body {
     border: 1px solid var(--primary-light);
     color: var(--text);
 }
-
-
-/* SOCIALS */
 
 .socials {
     display: flex;
@@ -217,8 +207,7 @@ body {
     font-size: 13px;
     font-weight: 600;
 
-    transition: border 0.3s ease,
-                transform 0.3s ease;
+    transition: border 0.3s ease, transform 0.3s ease;
 }
 
 .socials a:hover {
@@ -227,7 +216,7 @@ body {
 }
 
 
-/* RIGHT SIDE */
+/* ── HERO VISUAL (right side) ── */
 
 .visual {
     width: 46%;
@@ -240,9 +229,6 @@ body {
     justify-content: center;
 }
 
-
-/* PURPLE GLOW */
-
 .purple-glow {
     width: 390px;
     height: 390px;
@@ -251,20 +237,12 @@ body {
 
     border-radius: 50%;
 
-    background: linear-gradient(
-        135deg,
-        #7C3AED,
-        #4F46E5
-    );
+    background: linear-gradient(135deg, #7C3AED, #4F46E5);
 
-    box-shadow:
-        0 0 80px rgba(124, 58, 237, 0.35);
+    box-shadow: 0 0 80px rgba(124, 58, 237, 0.35);
 
     top: 100px;
 }
-
-
-/* PROFILE */
 
 .profile {
     width: 390px;
@@ -280,9 +258,6 @@ body {
 
     filter: brightness(0.9);
 }
-
-
-/* ORBIT */
 
 .orbit {
     width: 560px;
@@ -317,9 +292,6 @@ body {
     box-shadow: 0 0 18px var(--primary-light);
 }
 
-
-/* CODE CARD */
-
 .code-card {
     position: absolute;
 
@@ -353,17 +325,9 @@ body {
     border-radius: 50%;
 }
 
-.code-dots span:nth-child(1) {
-    background: #F43F5E;
-}
-
-.code-dots span:nth-child(2) {
-    background: #FACC15;
-}
-
-.code-dots span:nth-child(3) {
-    background: #4ADE80;
-}
+.code-dots span:nth-child(1) { background: #F43F5E; }
+.code-dots span:nth-child(2) { background: #FACC15; }
+.code-dots span:nth-child(3) { background: #4ADE80; }
 
 .code-card pre {
     font-size: 13px;
@@ -371,20 +335,10 @@ body {
     overflow: hidden;
 }
 
-.purple {
-    color: #C084FC;
-}
-
-.blue {
-    color: #38BDF8;
-}
-
-.green {
-    color: #4ADE80;
-}
-
-
-/* EDUCATION CARD */
+/* Syntax highlight colours used in the code card */
+.purple { color: #C084FC; }
+.blue   { color: #38BDF8; }
+.green  { color: #4ADE80; }
 
 .education-card {
     position: absolute;
@@ -424,9 +378,6 @@ body {
     margin-top: 5px;
 }
 
-
-/* BUILD TEXT */
-
 .build-text {
     position: absolute;
 
@@ -444,9 +395,7 @@ body {
 }
 
 
-/* =====================================================
-   RESPONSIVE — HERO (tablets & phones)
-   ===================================================== */
+/* ── RESPONSIVE: HERO ── */
 
 @media (max-width: 1000px) {
 
@@ -472,8 +421,6 @@ body {
     }
 }
 
-
-/* Tablet — stack hero vertically, hide desktop nav links */
 @media (max-width: 768px) {
 
     .nav {
@@ -495,10 +442,8 @@ body {
         width: 100%;
     }
 
-    /* On tablet, show the visual section scaled down nicely.
-       overflow: hidden clips the absolutely-positioned floating cards
-       so they don't bleed out of the scaled container and cause
-       horizontal scroll. */
+    /* overflow: hidden clips absolutely-positioned child cards so they
+       don't bleed past the scaled container and cause horizontal scroll */
     .visual {
         width: 100%;
         min-height: 480px;
@@ -509,8 +454,6 @@ body {
     }
 }
 
-
-/* Phone — completely restructure the hero visual */
 @media (max-width: 540px) {
 
     .nav {
@@ -523,7 +466,6 @@ body {
         gap: 8px;
     }
 
-    /* Connect arrow hidden on tiny screens */
     .connect span {
         display: none;
     }
@@ -581,13 +523,14 @@ body {
         height: 42px;
     }
 
-    /* On phones, hide the complex floating visual */
-    /* and show a simple centered photo instead    */
+    /* Hide the complex floating visual on phones */
     .visual {
         display: none;
     }
+}
 
-    /* Simple photo shown only on mobile, right after intro */
+/* Show mobile photo only on phones (≤540px); hidden on everything wider */
+@media (max-width: 540px) {
     .mobile-photo {
         display: block;
         width: 140px;
@@ -601,7 +544,6 @@ body {
     }
 }
 
-/* For screens wider than 540px hide the mobile photo */
 @media (min-width: 541px) {
     .mobile-photo {
         display: none;
@@ -609,9 +551,7 @@ body {
 }
 
 
-/* =====================================================
-   SHARED SECTION UTILITIES
-   ===================================================== */
+/* ── SHARED SECTION UTILITIES ── */
 
 .accent {
     color: var(--primary-light);
@@ -649,9 +589,7 @@ body {
 }
 
 
-/* =====================================================
-   ABOUT SECTION
-   ===================================================== */
+/* ── ABOUT ── */
 
 .section-about {
     padding: 110px 5.5%;
@@ -782,9 +720,7 @@ body {
 }
 
 
-/* =====================================================
-   SKILLS SECTION
-   ===================================================== */
+/* ── SKILLS ── */
 
 .section-skills {
     padding: 110px 5.5%;
@@ -885,7 +821,7 @@ body {
 
 @keyframes pulse-dot {
     0%, 100% { opacity: 1; }
-    50% { opacity: 0.4; }
+    50%       { opacity: 0.4; }
 }
 
 .currently-item {
@@ -898,9 +834,7 @@ body {
 }
 
 
-/* =====================================================
-   PROJECTS SECTION
-   ===================================================== */
+/* ── PROJECTS ── */
 
 .section-projects {
     padding: 110px 5.5%;
@@ -1055,9 +989,7 @@ body {
 }
 
 
-/* =====================================================
-   CONTACT SECTION
-   ===================================================== */
+/* ── CONTACT ── */
 
 .section-contact {
     padding: 120px 5.5% 100px;
@@ -1176,9 +1108,7 @@ body {
 }
 
 
-/* =====================================================
-   FOOTER
-   ===================================================== */
+/* ── FOOTER ── */
 
 .footer {
     border-top: 1px solid var(--border);
@@ -1204,9 +1134,7 @@ body {
 }
 
 
-/* =====================================================
-   RESPONSIVE — TABLETS (≤ 900px)
-   ===================================================== */
+/* ── RESPONSIVE: TABLETS (≤900px) ── */
 
 @media (max-width: 900px) {
 
@@ -1242,9 +1170,7 @@ body {
 }
 
 
-/* =====================================================
-   RESPONSIVE — PHONES (≤ 600px)
-   ===================================================== */
+/* ── RESPONSIVE: PHONES (≤600px) ── */
 
 @media (max-width: 600px) {
 
@@ -1263,7 +1189,6 @@ body {
         letter-spacing: -1px;
     }
 
-    /* About */
     .about-stats {
         flex-direction: column;
         gap: 20px;
@@ -1280,12 +1205,10 @@ body {
         font-size: 15.5px;
     }
 
-    /* Skills */
     .skill-group {
         padding: 22px 18px;
     }
 
-    /* Projects */
     .projects-grid {
         grid-template-columns: 1fr;
     }
@@ -1294,7 +1217,6 @@ body {
         padding: 22px 20px;
     }
 
-    /* Contact */
     .contact-links {
         grid-template-columns: 1fr;
     }
@@ -1309,7 +1231,6 @@ body {
         gap: 14px;
     }
 
-    /* Footer */
     .footer-inner {
         flex-direction: column;
         align-items: flex-start;
