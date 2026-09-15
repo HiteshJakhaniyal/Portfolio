@@ -118,11 +118,14 @@
                         <span></span>
                     </div>
 
-                    <pre><code><span class="purple">const</span> developer = {
-  <span class="blue">name</span>: <span class="green">"Hitesh"</span>,
-  <span class="blue">passion</span>: [<span class="green">"Web Dev"</span>, <span class="green">"AI"</span>, <span class="green">"DSA"</span>],
-  <span class="blue">goal</span>: <span class="green">"Build meaningful products"</span>
-};</code></pre>
+                    <pre><code><span class="purple">function</span> <span class="blue">solve</span>(problem) {
+  <span class="purple">const</span> stack = [<span class="green">"Web Dev"</span>, <span class="green">"AI"</span>, <span class="green">"DSA"</span>];
+  <span class="purple">while</span> (stack.length) {
+    <span class="blue">learn</span>(stack.<span class="blue">pop</span>());
+    <span class="blue">build</span>(problem);
+  }
+  <span class="purple">return</span> <span class="green">"shipped"</span>;
+}</code></pre>
 
                 </div>
 
