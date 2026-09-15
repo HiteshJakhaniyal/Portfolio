@@ -249,12 +249,12 @@ body {
     height: 500px;
 
     object-fit: cover;
-    object-position: 52% 18%;
+    object-position: 52% 10%;
 
     position: relative;
     z-index: 2;
 
-    border-radius: 200px 200px 25px 25px;
+    border-radius: 50%;
 
     filter: brightness(0.9);
 }
@@ -536,8 +536,8 @@ body {
         width: 140px;
         height: 180px;
         object-fit: cover;
-        object-position: 52% 18%;
-        border-radius: 100px 100px 18px 18px;
+        object-position: 52% 10%;
+        border-radius: 50%;
         border: 2px solid rgba(168, 85, 247, 0.4);
         filter: brightness(0.9);
         margin: 32px auto 0;
